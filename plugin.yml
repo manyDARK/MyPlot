@@ -1,15 +1,24 @@
 name: MyPlot
 description: "Plots and Protection Plugin for MCPE Servers"
-authors: ["Wiez","Exxarion","jasonwynn10"]
+authors:
+ - Wiez
+ - Exxarion
+ - jasonwynn10
 main: MyPlot\MyPlot
-version: 1.1.0
-api: [1.13.1, 2.0.0, 2.1.0]
-softdepend: [EconomyAPI, PocketMoney, EssentialsPE]
+version: 1.1.3
+api:
+ - 1.13.1
+ - 2.0.0
+ - 2.1.0
+softdepend:
+- EconomyAPI
+- PocketMoney
+- EssentialsPE
+- EconomyPlus
 load: STARTUP
-
 permissions:
     myplot.command:
-        default: true
+        default: op
         children:
             myplot.command.help:
                 default: true
@@ -96,7 +105,7 @@ permissions:
             myplot.admin.list:
                 default: op
     myplot.claimplots:
-        default: false
+        default: op
         children:
             myplot.claimplots.2:
                 default: true
