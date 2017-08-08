@@ -19,7 +19,6 @@ use EconomyPlus\EconomyPlus;
 
 use EssentialsPE\Loader;
 
-use pocketmine\block\Air;
 use pocketmine\event\level\LevelLoadEvent;
 use pocketmine\lang\BaseLang;
 use pocketmine\level\format\Chunk;
@@ -232,9 +231,7 @@ class MyPlot extends PluginBase
 		}
 		$pos = $this->getPlotPosition($plot);
 		$plotSize = $plotLevel->plotSize;
-		$pos->x += floor($plotSize / 2);
-		$pos->z -= 1;
-		$pos->y += 1;
+		$pos->add(floor($plotSize / 2), -1, 1);
 		$player->teleport($pos);
 		return true;
 	}
@@ -297,37 +294,24 @@ class MyPlot extends PluginBase
 	 * @param Biome $biome
 	 * @return bool
 	 */
-	public function setPlotBiome(Plot $plot, Biome $biome) {
-		$plotLevel = $this->getLevelSettings($plot->levelName);
-		if ($plotLevel === null) {
-			return false;
-		}
-		$level = $this->getServer()->getLevelByName($plot->levelName);
-		$pos = $this->getPlotPosition($plot);
-		$plotSize = $plotLevel->plotSize;
-		$xMax = $pos->x + $plotSize;
-		$zMax = $pos->z + $plotSize;
-		$chunkIndexes = [];
-		for ($x = $pos->x; $x < $xMax; $x++) {
-			for ($z = $pos->z; $z < $zMax; $z++) {
-				$index = Level::chunkHash($x >> 4, $z >> 4);
-				if (!in_array($index, $chunkIndexes)) {
-					$chunkIndexes[] = $index;
+	public function setPlotBiome(Plot $plot, Biome $biome) : bool {
+		foreach($this->getPlotChunks($plot) as $chunk) {
+			if($chunk instanceof Chunk) {
+				for($x = 0; $x <= 16; $x++) {
+					for($z = 0; $z <= 16; $z++) {
+						$chunk->setBiomeId($x, $z, $biome->getId());
+						$chunk->setChanged(true);
+						foreach ($chunk->getEntities() as $entity) {
+							if($entity instanceof Player) {
+								$entity->onChunkChanged($chunk);
+								$entity->sendChunk($x, $z, $chunk);
+							}
+						}
+					}
 				}
-				$color = $biome->getColor();
-				$R = $color >> 16;
-				$G = ($color >> 8) & 0xff;
-				$B = $color & 0xff;
-				$level->setBiomeColor($x, $z, $R, $G, $B);
 			}
 		}
-		foreach ($chunkIndexes as $index) {
-			Level::getXZ($index, $plot->X, $plot->Z);
-			$chunk = $level->getChunk($plot->X,$plot->Z);
-			foreach ($level->getChunkPlayers($plot->X, $plot->Z) as $player) {
-				$player->onChunkChanged($chunk);
-			}
-		}
+
 		$plot->biome = $biome->getName();
 		$this->savePlot($plot);
 		return true;
@@ -418,17 +402,16 @@ class MyPlot extends PluginBase
 		}
 		$plotSize = $plotLevel->plotSize;
 		$pos = $this->getPlotPosition($plot);
-		$X = $pos->getX() + ($plotSize / 2);
-		$Z = $pos->getZ();
-		for($Y = $pos->getY(); $Y < 128; $Y++) {
-			$mid = new Position($X,$Y+0.5,$Z, $this->getServer()->getLevelByName($plot->levelName));
-			$mida = new Position($X,$Y,$Z, $this->getServer()->getLevelByName($plot->levelName));
-			$midb = new Position($X,$Y+1,$Z, $this->getServer()->getLevelByName($plot->levelName));
-			if ($this->getServer()->getLevelByName($plot->levelName)->getBlock($mida) === Air::class and $this->getServer()->getLevelByName($plot->levelName)->getBlock($midb) === Air::class) {
-				return $mid;
-			}
-		}
-		return new Position($X, $pos->getY(), $Z, $this->getServer()->getLevelByName($plot->levelName));
+		if($plot->X >= 0 and $plot->Z >= 0)
+			$pos->add(floor($plotSize / 2), 1, floor($plotSize / 2));
+		if($plot->X < 0 and $plot->Z > 0)
+			$pos->add(-floor($plotSize / 2), 1, floor($plotSize / 2));
+		if($plot->X > 0 and $plot->Z < 0)
+			$pos->add(floor($plotSize / 2), 1, -floor($plotSize / 2));
+		if($plot->X < 0 and $plot->Z < 0)
+			$pos->add(-floor($plotSize / 2), 1, -floor($plotSize / 2));
+
+		return $pos;
 	}
 
 	/**
@@ -438,7 +421,7 @@ class MyPlot extends PluginBase
 	 * @param Player $player
 	 * @return bool
 	 */
-	public function teleportMiddle(Plot $plot, Player $player) : bool {
+	public function teleportMiddle(Player $player, Plot $plot) : bool {
 		$mid = $this->getPlotMid($plot);
 		if($mid == null) {
 			return false;

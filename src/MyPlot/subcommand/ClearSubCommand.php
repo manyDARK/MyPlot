@@ -30,7 +30,7 @@ class ClearSubCommand extends SubCommand
 			$sender->sendMessage(TextFormat::RED . $this->translateString("notowner"));
 			return true;
 		}
-		if (count($args) == 1 and $args[0] == $this->translateString("confirm")) {
+		if (isset($args[0]) and $args[0] == $this->translateString("confirm")) {
 			$economy = $this->getPlugin()->getEconomyProvider();
 			$price = $this->getPlugin()->getLevelSettings($plot->levelName)->clearPrice;
 			if ($economy !== null and !$economy->reduceMoney($sender, $price)) {

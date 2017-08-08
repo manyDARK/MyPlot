@@ -30,11 +30,8 @@ class HomeSubCommand extends SubCommand
 		} else {
 			return false;
 		}
-		if(isset($args[1])) {
-			$plots = $this->getPlugin()->getPlotsOfPlayer($sender->getName(), $args[1]);
-		}else{
-			$plots = $this->getPlugin()->getPlotsOfPlayer($sender->getName(), $sender->getLevel()->getName());
-		}
+		$levelName = $args[1] ?? $sender->getLevel()->getName();
+		$plots = $this->getPlugin()->getPlotsOfPlayer($sender->getName(), $levelName);
 		if (empty($plots)) {
 			$sender->sendMessage(TextFormat::RED . $this->translateString("home.noplots"));
 			return true;
