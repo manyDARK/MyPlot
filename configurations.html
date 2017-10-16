@@ -1,147 +1,147 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>MyPlot Configs</title>
-		<meta charset='UTF-8'>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-		<meta name="description" content="MyPlot: An MCPE Plot Management Plugin">
-		<link rel="stylesheet" type="text/css" media="screen" href="https://jasonwynn10.github.io/MyPlot/stylesheets/stylesheet.css">
-		<link rel="shortcut icon" type="image/x-icon" href="https://jasonwynn10.github.io/MyPlot/images/favicon.ico"/>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-		<link href='http://fonts.googleapis.com/css?family=Roboto:400italic,300,700,400' rel='stylesheet' type='text/css'>
-		<script type="text/javascript" src="http://s3.amazonaws.com/codecademy-content/courses/hour-of-code/js/alphabet.js"></script>
-		<style type="text/css">
-			body {
-				overflow-x:hidden;
-			}
-		</style>
-	</head>
-	<body>
-		<div id="header_wrap" class="outer">
-			<header class="inner">
-				<h1 id="project_title">MCPE MyPlot Plugin</h1>
-				<h3 id="project_tagline">Welcome to the official MyPlot wiki</h3>
-				<div align="left" id="nav">
-					<div align="left" id="nav_wrapper">
-						<ul>
-							<li><a href="https://jasonwynn10.github.io/MyPlot">Home</a></li>
-							<li><a href="https://jasonwynn10.github.io/MyPlot/about">About</a></li>
-							<li><a href="https://jasonwynn10.github.io/MyPlot/downloads">Downloads</a></li>
-							<li><a href="https://jasonwynn10.github.io/MyPlot/cmdsandperms">Commands and Permissions</a></li>
-							<li><a href="https://jasonwynn10.github.io/MyPlot/configurations">Configurations</a></li>
-							<li><a href="https://jasonwynn10.github.io/MyPlot/how-to-use">Setup / Upgrade</a></li>
-							<li><a>Support</a>
-								<ul>
-									<li><a href="https://jasonwynn10.github.io/MyPlot/issues">Open an issue</a></li>
-									<li><a href="https://gitter.im/jasonwynn10/MyPlot/" target="_blank">Gitter Chat</a></li>
-								</ul>
-							</li>
-							<li><a href="https://jasonwynn10.github.com/MyPlot/contributors">Contributors</a></li>
-						</ul>
-					</div>
-				</div>
-			</header>
-		</div>
-		<div id="main_content_wrap" class="outer">
-			<section id="main_content" class="inner">
-				<h3><a class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>MyPlot Default Configuration</h3>
-				<table class="tftable" border="2">
-					<tr>
-						<th>Setting</th>
-						<th>Explanation</th>
-					</tr>
-					<tr>
-						<td><code>language</code></td>
-						<td>This is the language that will be used in all the features of the MyPlot Plugin.</td>
-					</tr>
-					<tr>
-						<td><code>DataProvider</code></td>
-						<td>This is the type of system that will be used to save the Plot Worlds data.</td>
-					</tr>
-					<tr>
-						<td><code>MySQLSettings</code></td>
-						<td>Contains the settings that will be used if the <code>DataProvider</code> setting is set to mysql.</td>
-					</tr>
-					<tr>
-						<td><code>UseEconomy</code></td>
-						<td>This needs to be set to true if you want to use economy features in plotworlds.</td>
-					</tr>
-					<tr>
-						<td><code>PlotCacheSize</code></td>
-						<td>The amount of plots that will be saved in the cache for better performance.<br><i>NOTE:</i> The higher this number is, the more memory the server will occupy.</td>
-					</tr>
-					<tr>
-						<td><code>ShowPlotPopup</code></td>
-						<td>When a player enters a plot and this setting is true, a popup with basic info about the plot will be shown.</td>
-					</tr>
-					<tr>
-						<td><code>ClearBlocksPerTick</code></td>
-						<td>This is the amount of blocks to be reset in a plot per tick.<br><i>NOTE:</i> The higher this number is, the more lag will be generated from clearing and resetting plots.</td>
-					</tr>
-					<tr>
-						<td><code>Generator</code></td>
-						<td>This is the name of the Generator that will be used to generate new plot worlds.</td>
-					</tr>
-					<tr>
-						<td><code>DefaultWorld</code></td>
-						<td>These settings will be used when creating a new world with the Default MyPlot Generator.</td>
-					</tr>
-					<tr>
-						<td><code>RestrictEntityMovement</code></td>
-						<td>This setting will allod or disallow the movement of entities within the plot world.</td>
-					</tr>
-					<tr>
-						<td><code>ClaimPrice</code></td>
-						<td>This is the price a plot costs to be claimed. This is only applied when <code>UseEconomy</code> is set to true.</td>
-					</tr>
-					<tr>
-						<td><code>ClearPrice</code></td>
-						<td>This is the price a plot costs to be cleared. This is only applied when <code>UseEconomy</code> is set to true.</td>
-					</tr>
-					<tr>
-						<td><code>DisposePrice</code></td>
-						<td>This is the price a plot costs to be disposed of. This is only applied when <code>UseEconomy</code> is set to true.</td>
-					</tr>
-					<tr>
-						<td><code>ResetPrice</code></td>
-						<td>This is the price a plot costs to be reset. This is only applied when <code>Economy</code> is set to true.</td>
-					</tr>
-					<tr>
-						<td><code>PlotSize</code></td>
-						<td>This is the length and width of each plot generated.</td>
-					</tr>
-					<tr>
-						<td><code>GroundHeight</code></td>
-						<td>This is the distance from the lowest block in the world where the surface floor will be.</td>
-					</tr>
-					<tr>
-						<td><code>RoadWidth</code></td>
-						<td>This is the distance between plots that makes up the road.</td>
-					</tr>
-					<tr>
-						<td><code>RoadBlock</code></td>
-						<td>This is the block id of the road floor.</td>
-					</tr>
-					<tr>
-						<td><code>WallBlock</code></td>
-						<td>This is the block id of the plot walls.</td>
-					</tr>
-					<tr>
-						<td><code>PlotFloorBlock</code></td>
-						<td>This is the block id of the plots surface block.</td>
-					</tr>
-					<tr>
-						<td><code>PlotFillBlock</code></td>
-						<td>This is the block id that will fill the plot under the surface.</td>
-					</tr>
-					<tr>
-						<td><code>BottomBlock</code></td>
-						<td>This is the block id that will make up the bottom block of the world.</td>
-					</tr>
-				</table>
-				<h4>Example MyPlot Configuration File</h4>
-				<pre>
+    <head>
+        <title>MyPlot Configs</title>
+        <meta charset='UTF-8'>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+        <meta name="description" content="MyPlot: An MCPE Plot Management Plugin">
+        <link rel="stylesheet" type="text/css" media="screen" href="https://jasonwynn10.github.io/MyPlot/stylesheets/stylesheet.css">
+        <link rel="shortcut icon" type="image/x-icon" href="https://jasonwynn10.github.io/MyPlot/images/favicon.ico"/>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400italic,300,700,400' rel='stylesheet' type='text/css'>
+        <script type="text/javascript" src="http://s3.amazonaws.com/codecademy-content/courses/hour-of-code/js/alphabet.js"></script>
+        <style type="text/css">
+            body {
+                overflow-x:hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header_wrap" class="outer">
+            <header class="inner">
+                <h1 id="project_title">MCPE MyPlot Plugin</h1>
+                <h3 id="project_tagline">Welcome to the official MyPlot wiki</h3>
+                <div align="left" id="nav">
+                    <div align="left" id="nav_wrapper">
+                        <ul>
+                            <li><a href="https://jasonwynn10.github.io/MyPlot">Home</a></li>
+                            <li><a href="https://jasonwynn10.github.io/MyPlot/about">About</a></li>
+                            <li><a href="https://jasonwynn10.github.io/MyPlot/downloads">Downloads</a></li>
+                            <li><a href="https://jasonwynn10.github.io/MyPlot/cmdsandperms">Commands and Permissions</a></li>
+                            <li><a href="https://jasonwynn10.github.io/MyPlot/configurations">Configurations</a></li>
+                            <li><a href="https://jasonwynn10.github.io/MyPlot/how-to-use">Setup / Upgrade</a></li>
+                            <li><a>Support</a>
+                                <ul>
+                                    <li><a href="https://jasonwynn10.github.io/MyPlot/issues">Open an issue</a></li>
+                                    <li><a href="https://gitter.im/jasonwynn10/MyPlot/" target="_blank">Gitter Chat</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="https://jasonwynn10.github.com/MyPlot/contributors">Contributors</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div id="main_content_wrap" class="outer">
+            <section id="main_content" class="inner">
+                <h3><a class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>MyPlot Default Configuration</h3>
+                <table class="tftable" border="2">
+                    <tr>
+                        <th>Setting</th>
+                        <th>Explanation</th>
+                    </tr>
+                    <tr>
+                        <td><code>language</code></td>
+                        <td>This is the language that will be used in all the features of the MyPlot Plugin.</td>
+                    </tr>
+                    <tr>
+                        <td><code>DataProvider</code></td>
+                        <td>This is the type of system that will be used to save the Plot Worlds data.</td>
+                    </tr>
+                    <tr>
+                        <td><code>MySQLSettings</code></td>
+                        <td>Contains the settings that will be used if the <code>DataProvider</code> setting is set to mysql.</td>
+                    </tr>
+                    <tr>
+                        <td><code>UseEconomy</code></td>
+                        <td>This needs to be set to true if you want to use economy features in plotworlds.</td>
+                    </tr>
+                    <tr>
+                        <td><code>PlotCacheSize</code></td>
+                        <td>The amount of plots that will be saved in the cache for better performance.<br><i>NOTE:</i> The higher this number is, the more memory the server will occupy.</td>
+                    </tr>
+                    <tr>
+                        <td><code>ShowPlotPopup</code></td>
+                        <td>When a player enters a plot and this setting is true, a popup with basic info about the plot will be shown.</td>
+                    </tr>
+                    <tr>
+                        <td><code>ClearBlocksPerTick</code></td>
+                        <td>This is the amount of blocks to be reset in a plot per tick.<br><i>NOTE:</i> The higher this number is, the more lag will be generated from clearing and resetting plots.</td>
+                    </tr>
+                    <tr>
+                        <td><code>Generator</code></td>
+                        <td>This is the name of the Generator that will be used to generate new plot worlds.</td>
+                    </tr>
+                    <tr>
+                        <td><code>DefaultWorld</code></td>
+                        <td>These settings will be used when creating a new world with the Default MyPlot Generator.</td>
+                    </tr>
+                    <tr>
+                        <td><code>RestrictEntityMovement</code></td>
+                        <td>This setting will allod or disallow the movement of entities within the plot world.</td>
+                    </tr>
+                    <tr>
+                        <td><code>ClaimPrice</code></td>
+                        <td>This is the price a plot costs to be claimed. This is only applied when <code>UseEconomy</code> is set to true.</td>
+                    </tr>
+                    <tr>
+                        <td><code>ClearPrice</code></td>
+                        <td>This is the price a plot costs to be cleared. This is only applied when <code>UseEconomy</code> is set to true.</td>
+                    </tr>
+                    <tr>
+                        <td><code>DisposePrice</code></td>
+                        <td>This is the price a plot costs to be disposed of. This is only applied when <code>UseEconomy</code> is set to true.</td>
+                    </tr>
+                    <tr>
+                        <td><code>ResetPrice</code></td>
+                        <td>This is the price a plot costs to be reset. This is only applied when <code>Economy</code> is set to true.</td>
+                    </tr>
+                    <tr>
+                        <td><code>PlotSize</code></td>
+                        <td>This is the length and width of each plot generated.</td>
+                    </tr>
+                    <tr>
+                        <td><code>GroundHeight</code></td>
+                        <td>This is the distance from the lowest block in the world where the surface floor will be.</td>
+                    </tr>
+                    <tr>
+                        <td><code>RoadWidth</code></td>
+                        <td>This is the distance between plots that makes up the road.</td>
+                    </tr>
+                    <tr>
+                        <td><code>RoadBlock</code></td>
+                        <td>This is the block id of the road floor.</td>
+                    </tr>
+                    <tr>
+                        <td><code>WallBlock</code></td>
+                        <td>This is the block id of the plot walls.</td>
+                    </tr>
+                    <tr>
+                        <td><code>PlotFloorBlock</code></td>
+                        <td>This is the block id of the plots surface block.</td>
+                    </tr>
+                    <tr>
+                        <td><code>PlotFillBlock</code></td>
+                        <td>This is the block id that will fill the plot under the surface.</td>
+                    </tr>
+                    <tr>
+                        <td><code>BottomBlock</code></td>
+                        <td>This is the block id that will make up the bottom block of the world.</td>
+                    </tr>
+                </table>
+                <h4>Example MyPlot Configuration File</h4>
+                <pre>
 #########################################
 # ___  ___       ______  _         _    #
 # |  \/  |       | ___ \| |       | |   #
@@ -228,50 +228,50 @@ DefaultWorld:
   PlotFillBlock: '3:0'
   # The block at the bottom (Default is Bedrock)
   BottomBlock: '7:0'
-				</pre>
-			</section>
-		</div>
-		<div id="footer_wrap" class="outer">
-			<footer class="inner">
-				<div id="nav" class="quicknav">
-					<div align="left" class="quicknav_wrapper">
-						<ul>
-							<li><a><b>Quick Nav</b></a>
-								<ul>
-									<li><a href="https://jasonwynn10.github.io/MyPlot">Home</a></li>
-									<li><a href="https://jasonwynn10.github.io/MyPlot/about">About MyPlot</a></li>
-									<li><a href="https://jasonwynn10.github.io/MyPlot/downloads">Downloads</a></li>
-									<li><a href="https://jasonwynn10.github.io/MyPlot/cmdsandperms">Commands and Permissions</a></li>
-									<li><a href="https://jasonwynn10.github.io/MyPlot/configurations">Configurations</a></li>
-									<li><a href="https://jasonwynn10.github.io/MyPlot/how-to-use">Setup / Upgrade</a></li>
-									<li><a href="https://jasonwynn10.github.io/MyPlot/issues">Open an issue</a></li>
-									<li><a href="https://jasonwynn10.github.io/MyPlot/contributors">Contributions</a></li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<p class="copyright"align="center">MyPlot is maintained by <a href="https://github.com/jasonwynn10">jasonwynn10</a></p>
-			</footer>
-			<a href="" class="back-to-top" style="text-decoration: none; display: inline;">Top</a>
-			<script>
-				jQuery(document).ready(function () {
-					var offset = 220;
-					var duration = 500;
-					jQuery(window).scroll(function () {
-						if (jQuery(this).scrollTop() > offset) {
-							jQuery('.back-to-top').fadeIn(duration);
-						} else {
-							jQuery('.back-to-top').fadeOut(duration);
-						}
-					});
-					jQuery('.back-to-top').click(function (event) {
-						event.preventDefault();
-						jQuery('html, body').animate({scrollTop: 0}, duration);
-						return false;
-					})
-				});
-			</script>
-		</div>
-	</body>
+                </pre>
+            </section>
+        </div>
+        <div id="footer_wrap" class="outer">
+            <footer class="inner">
+                <div id="nav" class="quicknav">
+                    <div align="left" class="quicknav_wrapper">
+                        <ul>
+                            <li><a><b>Quick Nav</b></a>
+                                <ul>
+                                    <li><a href="https://jasonwynn10.github.io/MyPlot">Home</a></li>
+                                    <li><a href="https://jasonwynn10.github.io/MyPlot/about">About MyPlot</a></li>
+                                    <li><a href="https://jasonwynn10.github.io/MyPlot/downloads">Downloads</a></li>
+                                    <li><a href="https://jasonwynn10.github.io/MyPlot/cmdsandperms">Commands and Permissions</a></li>
+                                    <li><a href="https://jasonwynn10.github.io/MyPlot/configurations">Configurations</a></li>
+                                    <li><a href="https://jasonwynn10.github.io/MyPlot/how-to-use">Setup / Upgrade</a></li>
+                                    <li><a href="https://jasonwynn10.github.io/MyPlot/issues">Open an issue</a></li>
+                                    <li><a href="https://jasonwynn10.github.io/MyPlot/contributors">Contributions</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="copyright"align="center">MyPlot is maintained by <a href="https://github.com/jasonwynn10">jasonwynn10</a></p>
+            </footer>
+            <a href="" class="back-to-top" style="text-decoration: none; display: inline;">Top</a>
+            <script>
+                jQuery(document).ready(function () {
+                    var offset = 220;
+                    var duration = 500;
+                    jQuery(window).scroll(function () {
+                        if (jQuery(this).scrollTop() > offset) {
+                            jQuery('.back-to-top').fadeIn(duration);
+                        } else {
+                            jQuery('.back-to-top').fadeOut(duration);
+                        }
+                    });
+                    jQuery('.back-to-top').click(function (event) {
+                        event.preventDefault();
+                        jQuery('html, body').animate({scrollTop: 0}, duration);
+                        return false;
+                    })
+                });
+            </script>
+        </div>
+    </body>
 </html>

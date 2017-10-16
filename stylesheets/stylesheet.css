@@ -322,7 +322,7 @@ h1 {
 h2 {
 	padding-bottom: 10px;
 	font-size: 32px;
-	background: url("../images/bg_hr.png") repeat-x bottom;
+	background: url(../images/bg_hr.png) repeat-x bottom;
 }
 
 h3 {
@@ -417,7 +417,7 @@ hr {
 	height: 1px;
 	margin-bottom: 5px;
 	border: none;
-	background: url('../images/bg_hr.png') repeat-x center;
+	background: url(../images/bg_hr.png) repeat-x center;
 }
 
 form {
@@ -449,7 +449,7 @@ form {
 	bottom: -40px;
 	right: 0;
 	height: 70px;
-	background: url('../images/icon_download.png') no-repeat 0 90%;
+	background: url(../images/icon_download.png) no-repeat 0 90%;
 }
 
 /* [Not using] Tar & Zip download icon styles */
