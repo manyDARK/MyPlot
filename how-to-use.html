@@ -14,24 +14,24 @@
     <body>
         <div id="header_wrap" class="outer">
             <header class="inner">
-                <h1 id="project_title">MCPE MyPlot Plugin</h1>
+                <h1 id="project_title">MyPlot</h1>
                 <h3 id="project_tagline">Welcome to the official MyPlot wiki</h3>
                 <div align="left" id="nav">
                     <div align="left" id="nav_wrapper">
                         <ul>
-                            <li><a href="https://jasonwynn10.github.io/MyPlot">Home</a></li>
-                            <li><a href="https://jasonwynn10.github.io/MyPlot/about">About</a></li>
-                            <li><a href="https://jasonwynn10.github.io/MyPlot/downloads">Downloads</a></li>
-                            <li><a href="https://jasonwynn10.github.io/MyPlot/cmdsandperms">Commands and Permissions</a></li>
-                            <li><a href="https://jasonwynn10.github.io/MyPlot/configurations">Configurations</a></li>
-                            <li><a href="https://jasonwynn10.github.io/MyPlot/how-to-use">Setup / Upgrade</a></li>
+                            <li><a href="./">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="downloads.html">Downloads</a></li>
+                            <li><a href="cmdsandperms.html">Commands and Permissions</a></li>
+                            <li><a href="configurations.html">Configurations</a></li>
+                            <li><a href="how-to-use.html">Setup / Upgrade</a></li>
                             <li><a>Support</a>
                                 <ul>
-                                    <li><a href="https://jasonwynn10.github.io/MyPlot/issues">Open an issue</a></li>
-                                    <li><a href="https://gitter.im/jasonwynn10/MyPlot/" target="_blank">Gitter Chat</a></li>
+                                    <li><a href="issues.html">FAQs</a></li>
+                                    <li><a href="discord.html">MyPlot Discord</a></li>
                                 </ul>
                             </li>
-                            <li><a href="https://jasonwynn10.github.io/MyPlot/contributors">Contributors</a></li>
+                            <li><a href="contributors.html">Contributors</a></li>
                         </ul>
                     </div>
                 </div>
@@ -42,32 +42,19 @@
                 <h3>MyPlot First-Run Setup</h3>
                 <ol>
                     <li>Put the MyPlot.phar in your plugins folder</li>
-                    <li>Run your server to generate the MyPlot folder</li>
+                    <li>Run your server to generate the MyPlot folder and config</li>
                     <li>Change settings in the config.yml file in the MyPlot folder</li>
                     <li>Use the command, <code>/reload</code>, to reload the server with the new settings.</li>
                 </ol>
-                <p>
-                    <strong>The world names in the config.yml files must be in lowercase! That is extremely important.</strong>
-                    <br>
-                    <strong>You must have your worlds defined in both the Generator config and the MyPlot config.</strong>
-                </p>
                 <h3>Creating a Plot World</h3>
                 <p>Run the <code>/p generate</code> command in-game or in the console</p>
-                <h3>Upgrading from old versions</h3>
-                <ol type="1">
+                <h3>Upgrading the plugin</h3>
+                <ol>
                     <li>If you haven't done so already, stop your server</li>
                     <li>Delete your MyPlot.phar file from your plugins folder</li>
                     <li>Download the latest MyPlot version for your PMMP build from our downloads page <a href="https://jasonwynn10.github.io/MyPlot/downloads">here</a></li>
                     <li>Move the MyPlot.phar file to the plugins folder</li>
                     <li>Start the server</li>
-                </ol>
-                <h3>Changing Generators</h3>
-                <ol>
-                    <li>This feature has yet to be implemented in MyPlot! Ask jasonwynn10 for this feature if it is wanted!</li>
-                    <!--<li>If you haven't done so already, stop your server</li>
-                    <li>Open your config.yml file</li>
-                    <li>Change the <code>generator</code> setting from "MyPlotGenerator" to the name of the new one.<br><i>NOTE:</i> the generator name is CaSe sensitive!</li>
-                    <li>If you completed all the steps above then you should be able to generate a new plot world after a server restart with the new generators settings</li>-->
                 </ol>
             </section>
         </div>
@@ -78,13 +65,14 @@
                         <ul>
                             <li><a><b>Quick Nav</b></a>
                                 <ul>
-                                    <li><a href="https://jasonwynn10.github.io/MyPlot">Home</a></li>
-                                    <li><a href="https://jasonwynn10.github.io/MyPlot/about">About MyPlot</a></li>
-                                    <li><a href="https://jasonwynn10.github.io/MyPlot/downloads">Downloads</a></li>
-                                    <li><a href="https://jasonwynn10.github.io/MyPlot/cmdsandperms">Commands and Permissions</a></li>
-                                    <li><a href="https://jasonwynn10.github.io/MyPlot/configurations">Configurations</a></li>
-                                    <li><a href="https://jasonwynn10.github.io/MyPlot/issues">FAQs</a></li>
-                                    <li><a href="https://jasonwynn10.github.io/MyPlot/contributors">Contributors</a></li>
+                                    <li><a href="./">Home</a></li>
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="downloads.html">Downloads</a></li>
+                                    <li><a href="cmdsandperms.html">Commands and Permissions</a></li>
+                                    <li><a href="configurations.html">Configurations</a></li>
+                                    <li><a href="how-to-use.html">Setup / Upgrade</a></li>
+                                    <li><a href="issues.html">FAQs</a></li>
+                                    <li><a href="contributors.html">Contributors</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -96,7 +84,7 @@
             <script>
                 jQuery(document).ready(function () {
                     var offset = 220;
-                    var duration = 500;
+                    var duration = 250;
                     jQuery(window).scroll(function () {
                         if (jQuery(this).scrollTop() > offset) {
                             jQuery('.back-to-top').fadeIn(duration);
