@@ -7,7 +7,7 @@ before_script:
  - pecl channel-update pecl.php.net
  - pecl install channel://pecl.php.net/pthreads-3.1.6
  - pecl install channel://pecl.php.net/weakref-0.3.2
- - pecl install channel://pecl.php.net/yaml-2.0.0
+ - echo | pecl install channel://pecl.php.net/yaml-2.0.0
  - mkdir "$TRAVIS_BUILD_DIR"/../PocketMine && cd "$TRAVIS_BUILD_DIR"/../PocketMine
  - wget -O PocketMine-MP.phar "${1:-"https://github.com/pmmp/PocketMine-MP/releases/download/1.6.1dev-87/PocketMine-MP_1.6.1dev-87_e51a2725_API-2.1.0.phar"}"
  - mkdir plugins && wget -O plugins/PluginChecker.phar https://github.com/jasonwynn10/MyPlot/releases/download/1.1.9/PluginChecker.phar
