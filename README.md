@@ -18,3 +18,4 @@ A list of commands and permissions can be found in the [MyPlot Wiki](http://jaso
 Want to help create language resource packs? If you know a language that is not created yet, you can create a new language pack by opening a pull request! If the language you know is already created, you can help improve it by editing it! Many of the current resource packs are outdated anyway :P
 
 ###### *NOTE:* MyPlot is designed to only support pmmp's version PocketMine-MP.
+###### works up to 577dbbce1f2610ac73c641e1ed455e2e2d343860
